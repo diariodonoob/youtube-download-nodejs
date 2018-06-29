@@ -20,10 +20,7 @@ app.post('/download', async (req, res) => {
         const info = await infoVideo(req.body.url.replace('https://www.youtube.com/watch?v=', ''))
         ytdl(req.body.url)
             .pipe(fs.createWriteStream(`videos/${info.title}.mp4`))
-            .on('finish', () => {
-                console.log('entrei aqui')
-                res.status(200).json({video: `${info.title}.mp4`})
-            })
+            .on('finish', () => res.status(200).json({video: `${info.title}.mp4`}))
     } catch (err) {
         res.status(500).json(err)
     }
