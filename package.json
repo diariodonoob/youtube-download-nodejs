@@ -1,14 +1,8 @@
 {
   "name": "youtube-download-nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Download de vídeo do youtube usando nodeJS",
   "main": "app.js",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "ytdl-core": "^0.20.4"
-  },
-  "devDependencies": {},
   "scripts": {
     "start": "node app.js"
   },
@@ -22,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/diariodonoob/youtube-download-nodejs/issues"
   },
-  "homepage": "https://github.com/diariodonoob/youtube-download-nodejs#readme"
+  "homepage": "https://github.com/diariodonoob/youtube-download-nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "ytdl-core": "^0.20.4"
+  }
 }

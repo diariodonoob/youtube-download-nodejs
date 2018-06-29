@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Download de Vídeo do Youtube </title>
+    <title>Baixar Video do Youtube</title>
 </head>
+
 <body>
     <div style="margin-top: 15%; padding-left: 35%">
-        <h2> Download de Vídeo do Youtube </h2>
-        Coloque sua url aqui: <input type="text" id="text" style="width: 40%;">
-        <button onclick="enviar()"> Baixar </button>
+        <h2> Download de Vídeo do youtube</h2>
+        Coloque sua url aqui: <input type="text" id='text' style="width: 40%">
+        <button onclick="enviar()"> Download do Vídeo </button>
     </div>
     <script>
         function enviar() {
             var texto = document.getElementById('text').value
-            console.log(texto)
             fetch('http://localhost:8080/download', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ url: texto })
+                headers: { 'Content-Type': 'Application/json'},
+                body: JSON.stringify({url: texto})
             })
-                .then(function (response){ return response.json() })
-                .then(function (response) {
-                    console.log(response)
+                .then(function( response ) { return response.json() })
+                .then(function(response) {
                     window.location = 'http://localhost:8080/' + response.video
                 })
         }
